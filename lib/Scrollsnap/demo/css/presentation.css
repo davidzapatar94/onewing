@@ -1,0 +1,59 @@
+.snap {
+    padding-top: 30px;
+    background-image: url('../images/snapline.png');
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+code ul li {
+    font-size: 85%;
+}
+
+dt {
+    float: left;
+    display: block;
+    font-weight: bold;
+    margin-right: .5em;
+}
+
+.scrollingy300 {
+    height: 160px;
+    width: 300px;
+    overflow: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scrollingx300 {
+    height: 160px;
+    width: 300px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.iframe300 {
+    height: 160px;
+    width: 300px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling:touch;
+    overflow: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.iframed {
+    width: 10px;
+    min-width: 100%;
+}
+
+.w1500 {
+    width: 1500px;
+    white-space: nowrap;
+}
+
+@media only screen and (max-device-width: 1481px) {
+    h1 {
+        margin-top: 60px;
+        font-size: 45px;
+    }
+}

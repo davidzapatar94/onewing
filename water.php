@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Future Splash</title>
+    <!-- Jquery 1.11.3  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    
+</head>
+<body>
+    <style>
+        #stage-vertical-1{
+            transform: rotate(90deg); // Standard syntax 
+            background-color: transparent;
+            width: 40vw;
+            height: 100vh;
+        }
+        #stage-horizontal-1{
+            background-color: transparent;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+
+<section>
+    <!-- CANVAS VERTICAL -->
+    <canvas id='stage-vertical-1' width="100" height="100">
+    <p>Your browser doesn't support canvas.</p>
+    </canvas>
+
+    <script type="text/javascript">
+            
+            /*
+             * @author stephen burgess (steve@flashmonkey.co.uk)
+             * based on AS2 wave by Paul Lewis (http://www.anygivenfriday.com)
+             * which was based on Yugo Nakamura's original (http://yugop.com/)
+             */
+        
+            var stage_vertical_1 = document.getElementById('stage-vertical-1');
+            
+            var color_vertical_1 = "#ff00f0";
+            var springs_vertical_1 = [];
+            var storeY_vertical_1;
+            var extend_vertical_1 = 100;
+            var fK_vertical_1 = .95; 
+            var particles_vertical_1 = [];
+            var currentDrag_vertical_1 = null;
+            var mouseX_vertical_1 = 0;
+            var mouseY_vertical_1 = 0;
+            var stage_vertical_1Width = $(document).width();
+            var stage_vertical_1Height = $(document).height();
+            stage_vertical_1.width = stage_vertical_1Width;
+            stage_vertical_1.height = stage_vertical_1Height;
+            
+            var IE = document.all ? true : false;
+            if(!IE) document.addEventListener(Event.MOUSEMOVE, getMouseXY_vertical_1, false);
+            document.onmousemove = getMouseXY_vertical_1;
+            
+            window.onresize = function(event)
+            {
+                stage_vertical_1.width = 10;
+                stage_vertical_1.height = 10;
+                stage_vertical_1Width = $(document).width();
+                stage_vertical_1Height = $(document).height();
+                stage_vertical_1.width = stage_vertical_1Width;
+                stage_vertical_1.height = stage_vertical_1Height;
+                
+                generate_vertical_1();
+            }
+            
+            generate_vertical_1();
+            
+            var drawingCanvas = document.getElementById('stage-vertical-1');
+            if(drawingCanvas.getContext)
+            {
+                var context = drawingCanvas.getContext('2d');
+                setInterval(render_vertical_1, 20);
+            }
+            
+            function generate_vertical_1()
+            {
+                var total = Math.ceil(stage_vertical_1Width / 150);
+                springs_vertical_1 = [];
+                particles_vertical_1 = [];
+                
+                var space = (stage_vertical_1Width + extend_vertical_1) / total;
+                var xpos = (space * .5) - (extend_vertical_1 * .5);
+                var ypos = stage_vertical_1Height * .5;// restringir distancia del centro
+
+                for(var i = 0; i < total; i++)
+                {
+                    var particle = {};
+                    particle.x = particle.xpos = xpos;
+                    particle.y = particle.ypos = particle.origY = ypos;
+                    particle.ay = 0;
+                    particle.vy = 0;
+                    particle.mass = 10; // cambia la densidad del fluido
+                    particles_vertical_1[particles_vertical_1.length] = particle;
+                    
+                    xpos += space;
+                }
+                
+                
+                storeY_vertical_1 = mouseY_vertical_1;
+                for(var u = 0; u < particles_vertical_1.length-1; u++) springs_vertical_1.push({iLengthY:(particles_vertical_1[u+1].y - particles_vertical_1[u].y)});
+            }
+            
+            
+            function mouseMove_vertical_1()
+            {
+                var particle = null;
+                var smallestDist = 100;
+                var target = null;
+                
+                var j = particles_vertical_1.length;
+                while(--j > -1)
+                {
+                    var dx = mouseX_vertical_1 - particles_vertical_1[j].x;
+                    var dy = mouseY_vertical_1 - particles_vertical_1[j].y;
+                    var dist = Math.sqrt(dx * dx + dy * dy);
+                    console.log(dist+" < "+smallestDist);
+
+                    if(dist < smallestDist)
+                    {
+                        particle = particles_vertical_1[j];
+                        smallestDist = dist;
+                        target = j;
+                    }
+                }
+                
+                if(particle)// if(particle && mouseY_vertical_1 > particle.y)
+                {
+                    var speed = mouseY_vertical_1 - storeY_vertical_1;
+                    var maxSpeed = 10; // cree una variable de velocidad maxima para limitar el desplazamiento de los puntos
+
+                    // limito la velocidad de desplasamiento de los puntos
+                    if ( speed > maxSpeed) {
+                        speed = maxSpeed;
+                    }else if(speed < -maxSpeed){
+                        speed = -maxSpeed;
+                    }
+                    
+                    // crea una onda al hacer que los puntos adjacentes se elecen menos que el punto objetivo
+                    particles_vertical_1[target - 2].vy = (speed / 6) * -1;
+                    particles_vertical_1[target - 1].vy = (speed / 5) * -1;
+                    particles_vertical_1[target].vy = (speed / 3) * -1;
+                    particles_vertical_1[target + 1].vy = (speed / 5) * -1;
+                    particles_vertical_1[target + 2].vy = (speed / 6) * -1;
+                
+                    storeY_vertical_1 = mouseY_vertical_1;
+                }
+            }
+            
+            
+            function render_vertical_1()
+            {
+                for(var u = particles_vertical_1.length-1; u >= 0; --u)
+                {
+                    var fExtensionY = 0;
+                    var fForceY = 0;
+                
+                    if(u > 0)
+                    {
+                        fExtensionY = particles_vertical_1[u-1].y - particles_vertical_1[u].y - springs_vertical_1[u-1].iLengthY;
+                        fForceY += -fK_vertical_1 * fExtensionY;
+                    }
+                    
+                    if(u < particles_vertical_1.length-1)
+                    {
+                        fExtensionY = particles_vertical_1[u].y - particles_vertical_1[u+1].y - springs_vertical_1[u].iLengthY;
+                        fForceY += fK_vertical_1 * fExtensionY;
+                    }
+                    
+                    fExtensionY = particles_vertical_1[u].y - particles_vertical_1[u].origY;
+                    fForceY += fK_vertical_1/15 * fExtensionY; // fuerza con la que regresan al punto de inicio
+
+                    if (u > 1 && u < particles_vertical_1.length-2) { // mantengo los puntos de los borde anclados
+                        particles_vertical_1[u].ay = -fForceY/particles_vertical_1[u].mass;
+                        particles_vertical_1[u].vy += particles_vertical_1[u].ay;
+                        particles_vertical_1[u].ypos += particles_vertical_1[u].vy;
+                        particles_vertical_1[u].vy /= 1.04;
+                    }
+                }
+                
+                context.clearRect(0, 0, stage_vertical_1Width, stage_vertical_1Height);
+                context.fillStyle = color_vertical_1;
+                context.beginPath();
+                
+                for(u = 0; u < particles_vertical_1.length; u++)
+                {
+                    if(u==0)
+                    {
+                        context.moveTo(particles_vertical_1[u].xpos+(particles_vertical_1[u+1].xpos-particles_vertical_1[u].xpos)/2,particles_vertical_1[u].ypos+(particles_vertical_1[u+1].ypos-particles_vertical_1[u].ypos)/2);
+                    }
+                    else if(u < particles_vertical_1.length-1)
+                    {
+                        context.quadraticCurveTo(particles_vertical_1[u].xpos,particles_vertical_1[u].ypos,particles_vertical_1[u].xpos+(particles_vertical_1[u+1].xpos-particles_vertical_1[u].xpos)/2,particles_vertical_1[u].ypos+(particles_vertical_1[u+1].ypos-particles_vertical_1[u].ypos)/2);
+                    }
+                    particles_vertical_1[u].x = particles_vertical_1[u].xpos;
+                    particles_vertical_1[u].y = particles_vertical_1[u].ypos;
+                }
+                
+                context.lineTo(stage_vertical_1Width+50, stage_vertical_1Height+50);
+                context.lineTo(-50, stage_vertical_1Height+50);
+                context.lineTo(-50, stage_vertical_1Height);//context.lineTo(-50, stage_vertical_1Height/2);
+                context.closePath();
+                context.fill();
+                
+                var i = particles_vertical_1.length;
+                while(--i > -1)
+                {
+                    context.fillStyle = "#000000";
+                    context.beginPath();
+                    context.arc(particles_vertical_1[i].x,particles_vertical_1[i].y,1,0,Math.PI*2,true);
+                    context.closePath();
+                    context.fill();
+
+                }
+            }
+            
+            function getMouseXY_vertical_1(e)
+            {
+                if(IE)
+                {
+                    mouseY_vertical_1 = event.clientY + document.body.scrollLeft
+                    mouseX_vertical_1 = event.clientX + document.body.scrollTop
+                }
+                else
+                {
+                    mouseX_vertical_1 = (e.pageY)*2 // originalmente: (e.pageX), se cambio el eje y se multiplico por 2 para arreglar la desviacion debido a la pantalla ancha
+                    mouseY_vertical_1 = (e.pageX)
+                }  
+                
+                if(mouseX_vertical_1 < 0) {mouseY_vertical_1 = 0;}
+                if(mouseY_vertical_1 < 0) {mouseX_vertical_1 = 0;}  
+                
+
+                mouseMove_vertical_1();
+                
+                return true;
+            }
+    </script>
+</section>
+   
+
+
+</body>
+</html>

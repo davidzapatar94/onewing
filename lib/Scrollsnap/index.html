@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>jQuery Scrollsnap plugin</title>
+
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="demo/foundation/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="demo/snippet/jquery.snippet.min.css">
+  <link rel="stylesheet" href="demo/css/presentation.css">
+
+  <script src="demo/foundation/javascripts/modernizr.foundation.js"></script>
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="demo/foundation/javascripts/jquery.js"></script>
+  <script src="demo/snippet/jquery.snippet.min.js"></script>
+  <script src="src/jquery.scrollstop.js"></script>
+  <script src="src/jquery.easing.min.js"></script>
+  <script src="src/jquery.scrollsnap.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(document).scrollsnap({
+        snaps: '.snap',
+        proximity: 100,
+        easing: 'easeOutBack'
+      });
+      $('.scrollingy300').scrollsnap({
+        snaps: 'img',
+        proximity: 160
+      });
+      $('.scrollingx300').scrollsnap({
+        direction: 'x',
+        snaps: 'img',
+        proximity: 160
+      });
+      $("code pre").snippet("javascript",{style:"vim",showNum:false});
+    });
+  </script>
+</head>
+<body>
+
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Scrollsnap</h1>
+      <p>A jQuery plugin that enhances the scrolling experience, by providing a snapping behaviour.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <h3 class="snap">Scroll snapping</h3>
+      <p>Scrollsnap allows to define 'anchor points' onto which the window snaps when you scroll through a web page or parts of it.</p>
+      <h4>Scrollsnap document</h4>
+      <p>Scroll this page and notice how the window will snap to each snapping element (visible thru their snap line decoration).</p>
+      <h4>Scrollsnap scrollable elements</h4>
+      <p>Scroll on the colored rectangles (horizontally and vertically), and notice how it snaps perfectly to each of the colored rectangles.</p>
+      <div class="scrollingy300">
+          <img src='http://placehold.it/300x160/00ff00/000000&text=scroll me down'/>
+          <img src='http://placehold.it/300x160/00ffff/000000&text=keep scrolling' />
+          <img src='http://placehold.it/300x160/ff00ff/000000&text=keep scrolling' />
+          <img src='http://placehold.it/300x160/ff0000/000000&text=scroll me up' />
+      </div>
+      <div class="scrollingx300">
+          <img src='http://placehold.it/300x160/00ff00/000000&text=scroll me right'/>
+          <img src='http://placehold.it/300x160/00ffff/000000&text=keep scrolling' />
+          <img src='http://placehold.it/300x160/0000ff/000000&text=keep scrolling' />
+          <img src='http://placehold.it/300x160/ff00ff/000000&text=keep scrolling' />
+          <img src='http://placehold.it/300x160/ff0000/000000&text=scroll me left' />
+      </div>
+      <h4>Scrollsnap scrollable frames</h4>
+      <p>Same here but with an iframe. Scroll on the colored rectangles (vertically), and notice how it snaps perfectly to each of the colored rectangles.</p>
+      <iframe class="iframe300" src='demo/iframe-x.html' frameborder='0'></iframe>
+      <iframe class="iframe300" src='demo/iframe-y.html' frameborder='0'></iframe>
+    </div>
+    <div class="six columns">
+      <h3 class="snap">Compatibility</h3>
+      <p>Scrollsnap is compatible with any recent and decent browser:<br>
+        <span class="success label">chrome 24+</span><br>
+        <span class="success label">firefox 18+</span><br>
+        <span class="success label">safari 5+</span><br>
+        <span class="success label">iOS safari 5+</span><br>
+        <span class="success label">internet explorer 9+</span><br>
+      </p>
+      <h3 class="snap">Alternatives</h3>
+      <p>There are a few alternatives around, have a look at them before choosing a snaping solution.<br>
+        <ul>
+            <li>
+                <a href='http://wtm.github.io/jquery.snapscroll/'>jQuery SnapScroll</a>
+            </li>
+            <li>
+                <a href='http://guidobouman.github.io/jquery-panelsnap/'>jQuery PanelSnap</a>
+            </li>
+            <li>
+                <a href='http://jsfiddle.net/djsbaker/dxzk4/'>A barebone jQuery script</a>
+            </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <h3 class="snap">Use it</h3>
+      <h5>Installation</h5>
+      <p>It of course requires <a href="">jQuery</a>, but also two jquery plugins: <a href="https://github.com/ssorallen/jquery-scrollstop">jquery.scrollstop</a> that implements a special scrollstop events, and optionally <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jquery.easing.js</a>, that provides extra <a href="http://easings.net/">easing functions</a> (jquery itself has one easing function). These plugins are here provided along the <strong>jquery.scrollsnap.js</strong> source file, for ease of use.</p>
+      <p>Note that the Scrollsnap plugin only implements the snapping logic and provides no styling.</p>
+      <h5 class="snap">Usage</h5>
+      <code><pre>
+&lt;script src=&quot;demo/foundation/javascripts/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;src/jquery.easing.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;src/jquery.scrollstop.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;src/jquery.scrollsnap.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function() {
+    $(document).scrollsnap({
+        snaps: '.snap',
+        proximity: 50
+    });
+});
+&lt;/script&gt;</pre></code>
+      <h5 class="snap">Configuration</h5>
+      <p>
+        The following parameters can be passed to the <strong>scrollsnap()</strong> method to influence its behaviour:
+        <dl>
+            <dt>snaps:</dt><dd>the CSS selector of snapping elements; default: '*'.</dd>
+            <dt>direction:</dt><dd>the direction ('x', 'y') of scrolling; default: 'y'.</dd>
+            <dt>proximity:</dt><dd>the maximal distance from the viewport top from which the snapping occurs; default: 12.</dd>
+            <dt>offset:</dt><dd>the offset the snapping move must take; default: 0.</dd>
+            <dt>latency:</dt><dd>the time interval in milliseconds to check wether the scroll has stopped; default: 250.</dd>
+            <dt>duration:</dt><dd>the number of milliseconds during which the snapping animation takes place; default: 200.</dd>
+            <dt>easing:</dt><dd><a href="http://easings.net/">easing function</a>; default: 'swing' (the default jquery easing).</dd>
+            <dt>onSnapEvent:</dt><dd>the name of the event to trigger on the snapped DOM element when the snapping occurs; default: scrollsnap.</dd>
+            <dt>onSnap:</dt><dd>the callback function to call when a DOM element is snapped; the element is passed as argument.</dd>
+            <dt>onSnapWait:</dt><dd>the number of millinseconds to wait before the onSnapEvent is fired (to avoid redundant snaps); defaullt: 50.</dd>
+        </dl>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="twelve columns">
+      <h3 class="snap">Contribute</h3>
+      <p><a href="https://github.com/benoitpointet/jquery-scrollsnap-plugin">Fork me on github.</a></p>
+    </div>
+  </div>
+
+<a href="https://github.com/benoitpointet/jquery-scrollsnap-plugin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+</body>
+</html>
