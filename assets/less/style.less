@@ -1,3 +1,8 @@
+//out:../css/style.css, sourcemap: false, compress: true
+// main: ../less/style.less
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300');
+
 @keyframes boing{
     0% {height: 150px; width: 150px;}
     50%{height: 155px; width: 155px;}
@@ -5,17 +10,17 @@
 }
 
 @keyframes scroll-ball{
-    0% { 
+    0% {
         webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 0;
     }
-    40%{ 
+    40%{
         webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
     }
-    70%{ 
+    70%{
         opacity: 1;
     }
     100%{
@@ -44,7 +49,6 @@ body {
     text-transform: uppercase;
 }
 
-
 //////////////////////// SEPARADORES //////////////////////
 //////////////////////// SEPARADORES //////////////////////
 //////////////////////// SEPARADORES //////////////////////
@@ -54,7 +58,8 @@ body {
     width: 50%;
 }
 .separador-mini{
-    width: 10% !important;
+    margin: -10px 0 20px!important;
+    width: 60px;
 }
 .separador-contacto{
     margin-bottom: 25px;
@@ -63,7 +68,6 @@ body {
     background-color: #1200cc;
 }
 .separador-planes{
-
     margin: -5px 0 5px;
     background-color: white;
 }
@@ -82,7 +86,7 @@ body {
 #menu-bar{
     position: relative;
     width: 100%;
-    top: 0;
+    top: 50px;
     height: 65px;
     z-index: 1;
 
@@ -94,23 +98,89 @@ body {
     #extra-icons{
         #menu-icons-wrapper{
             margin-left: 50px;
-            //background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             .menu-icon{
-                display: inline-block;
+                cursor: pointer;
+            }
+            #contacto-wrapper{
+                font-size: 21px;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover{
+                    background-color: rebeccapurple;
+                    border-radius: 100%;
+                }
+            }
+            #share-wrapper{
+                font-size: 21px;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover{
+                    background-color: rebeccapurple;
+                    border-radius: 100%;
+                }
+            }
+            #lang-wrapper{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover{
+                    .text{
+                        margin-left: 0;
+                        -moz-transition: all 0.5s ease;
+                        -o-transition: all 0.5s ease;
+                        -webkit-transition: all 0.5s ease;
+                    }
+                    i{
+                        background-color: rebeccapurple;
+                        border-radius: 100%;
+                    }
+                }
+                .text{
+                    font-size: 18px;
+                    margin-left: -15px;
+                    -moz-transition: all 0.5s ease;
+                    -o-transition: all 0.5s ease;
+                    -webkit-transition: all 0.5s ease;
+                }
+                i{
+                    margin-right: 10px;
+                    font-size: 21px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
         }
     }
-
     #menu-icon-wrapper{
         position: fixed;
         right: 50px;
-        top: 10px;
+        top: 42px;
         #menu-icon{
-                display: inline-block;
-                z-index: 9999;
-                mix-blend-mode: multiply;
-                color: red;
-            }
+            display: inline-block;
+            z-index: 9999;
+            mix-blend-mode: multiply;
+            color: white;
+            height: 60px;
+            width: 60px;
+            background-color: #39ADFF;
+            font-size: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+        }
     }
 }
 
@@ -133,18 +203,32 @@ body {
     width: 20px;
     .indicator-ul{
         list-style-type: none;
-        .indicador{
-            display: block;
-            width: 15px;
-            height: 15px;
-            overflow: hidden;
-            border: 2px solid white;
-            border-radius: 100%;
-            margin-bottom: 20px;
+        li{
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            align-items: center;
+            .indicador{
+                display: block;
+                width: 8px;
+                height: 8px;
+                overflow: hidden;
+                border: 2px solid white;
+                border-radius: 100%;
+                margin-bottom: 20px;
+                &:hover{
+                    height: 10px;
+                    width: 10px;
+                    background-color: #fff;
+                }
+            }
+            .active{
+                background-color: #f00!important;
+                width: 12px!important;
+                height: 12px!important;
+            }
         }
-        .active{
-            background-color: #f00;
-        }
+
     }
 }
 
@@ -180,7 +264,7 @@ body {
         padding: 0;
         margin: 0;
         overflow: hidden;
-        
+
         #logo, #serv_1, #serv_2, #serv_3, #serv_4, #serv_5, #serv_6{
             position: relative;
             height: 150px;
@@ -197,369 +281,417 @@ body {
         #serv_1{
             top: 9vh !important;
             left: 5vw !important;
-        }#follow_1{
-            height: 160px;
-            width: 160px;
-        }
-
-        #serv_2{
-            top: 47vh !important;
-            left: -5vw !important;
-        }#follow_2{
-            height: 120px;
-            width: 120px;
-        }
-
-        #serv_3{
-            top: 76vh !important;
-            left: 16vw !important;
-        }
-        #follow_3{
-            height: 90px;
-            width: 90px;
-        }
-
-        #serv_4{ 
-            top: 35vh !important;
-            left: 75vw !important;
-        }
-        #follow_4{
-            height: 100px;
-            width: 100px;
-        }
-
-        #serv_5{
-            top: 74vh !important;
-            left: 88vw !important;
-        }#follow_5{
-            height: 150px;
-            width: 150px;
-        }
-
-        #serv_6{
-            top: 9vh !important;
-            left: 97vw !important;
-        }#follow_6{
-            height: 200px;
-            width: 200px;
-        }
-
-
-        #scroll-down{
-                position: absolute;
-                top: 90vh !important;
-                left: 45vw !important;
-                background: none;
-                border: none;
-        }
-
-        #mouse-wheel{
-            animation: scroll-ball ease-in-out 1.9s infinite;
-            
-        }
-
-        .logo-tuvitrina{
-            background-image: url("../img/logo-tuvitrina.png");
-        }
-        .logo-onewing{
-            background-image: url("../img/logo-onewing-04.png");
-
-        }
-
-        .onewing-img{
-            height: 320px;
-            width: 320px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            
-            // border-radius: 100%;
-            transition: filter 0.2s ease;
-            // -webkit-filter: saturate(0); /* Safari 6.0 - 9.0 */
-            // filter: saturate(0);
-            // border: 1px solid #fff;
-            
-            &:hover{
-                -webkit-filter: saturate(2); /* Safari 6.0 - 9.0 */
-                filter: saturate(2);
-                transition: filter 0.2s ease;
-                cursor: pointer;
-            }
-        }
-
-        .service-img{
-            background-size: contain;
-            background-repeat: no-repeat;
-            
-            // border-radius: 100%;
-            transition: filter 0.2s ease;
-            -webkit-filter: saturate(1); /* Safari 6.0 - 9.0 */
-            filter: saturate(1);
-            // border: 1px solid #fff;
-            
-            &:hover{
-                //-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-                // filter: grayscale(0%);
-                transition: filter 0.2s ease;
-                cursor: pointer;
-            }
-        }
-
-        
-        button{
-            transition: background 0.5s ease;
-            border-radius: 100%;
-            overflow: hidden; 
-            &:hover {
-                order-radius: 100%;
-                overflow: hidden; 
-                background: #00FFAA;
-                transition: background 0.5s ease;
-            }
-        }
-    }
-
-    .fill {
-      position: absolute !important;
-      bottom: 0%;
-      right: 0%;
-      left: 0%;
-      top: 0%;
-    }
-
-    .expand-width {
-      width: 50%;
-    }
-
-    .border {
-      border: 2px dashed #00FFAA;
-    }   
-
-    .wrapper {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 5%;
-    }
-
-    //^^^^^   PARLAX WORLD   ^^^^^^//
-    //^^^^^   PARLAX WORLD   ^^^^^^//
-    
-    //vvvvv   Planes   vvvvvv//
-    //vvvvv   Planes   vvvvvv//
-    #planes-section{
-        box-shadow: 0px -10px 10px @shadow;
-        z-index: 10  !important;
-        
-        .width_55{
-            width: 55%;    
-        }
-        .width_45{       
-            width: 45%;
-        }
-
-        #planes-wrapper{
-            z-index: 11  !important;
-            display: flex;
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 100vh;
-
-            .plan-apolo-wrapper{
-                margin:0;
-                background-color: #0CAACF;
-                z-index: 12 !important;
-            }
-            .otros-planes-wrapper{
-                margin:0;
-                background-color: #0554fa;
-                z-index: 12 !important;
-                
-                .plan-ares-wrapper{
-                margin:0;
-                height: 50%;
-                width: 100%;
-                background-color: #E6535B;
-                z-index: 13 !important;
-                }
-                .plan-athenea-wrapper{
-                margin:0;
-                height: 50%;
-                width: 100%;
-                background-color: #5F4896;
-                z-index: 13 !important;
-                }
-            }
-
-            .img-wrapper{
-                position: relative;
-                width: 60%;
-                height: 60%;
-                margin: auto;
-                padding-top: 5%;
+            }#follow_1{
+                height: 160px;
+                width: 160px;
                 img{
-                    position: absolute;
-                    max-height: 100%;
-                }
-
-            }
-            .info-wrapper{
-                color: white;
-                width: 100%;
-                height: 40%;
-                padding: 0 10%;
-
-                .tittle{
-                    font-size: 1.2em;
+                    width: 100%;
                 }
             }
-        }
-    }
 
-    
-    #planes-extra-section{
-        box-shadow: 0px -10px 10px @shadow;
-        z-index: 20  !important;
-        #planes-extra-wrapper{
-            display: flex;
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 100vh;
-            //background-color: #125cd0;
-            z-index: 21 !important;
-            
-            .extra-plans-img{
-                background-color: #B1C041;
-                height: 100%;
-                margin:0;
-                z-index: 22 !important;
-                overflow: hidden;
-                img{
-                    max-height: 100%;
-                }
-            }   
-            .extra-plans-info{
-                color: white;
-                background-color: #384780;
-                height: 100%;
-                margin:0;
-                padding: 5%;
-                z-index: 22 !important;
-                .tittle{
-                    color: @light-green;
-                    font-size: 1.2em;
-                    i{
-                        font-size: 0.5em;
+            #serv_2{
+                top: 47vh !important;
+                left: -5vw !important;
+                }#follow_2{
+                    height: 120px;
+                    width: 120px;
+                    img{
+                        width: 100%;
                     }
                 }
-                .bigText{
-                    font-size: 1.4em;
+
+                #serv_3{
+                    top: 76vh !important;
+                    left: 16vw !important;
                 }
-                .txt{
-
-                }   
-            }
-        }
-    }
-    //^^^^^   Planes   ^^^^^^//
-    //^^^^^   Planes   ^^^^^^//
-
-}
-
-.panel {
-    box-shadow: 0px -10px 10px @shadow;
-    height: 100%;
-    width: 100%;
-    p{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-//^^^^^   Wiping panels   ^^^^^^//
-//^^^^^   Wiping panels   ^^^^^^//
-
-
-
-//vvvvv   CONTACTO   vvvvvv//
-//vvvvv   CONTACTO   vvvvvv//
-#conact-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 30 !important;
-    background-color: #0e0e0e;
-    height: 100vh;
-
-    #contact-wrapper{
-        color: lightgray;
-        #contact-info{
-            max-width: 50vw;
-        }
-        .button-wrapper{
-            color: lightgray;
-            width: 100%;
-            button{
-                background-color: transparent;
-                border: 2px solid #1200cc;
-                height: 50px;
-                width: 150px;
-
-                &:hover{
-                    background-color: #fff;
+                #follow_3{
+                    height: 90px;
+                    width: 90px;
+                    img{
+                        width: 100%;
+                    }
                 }
-            }
-        }
-    }
 
-}
-//^^^^^   CONTACTO   ^^^^^^//
-//^^^^^   CONTACTO   ^^^^^^//
+                #serv_4{
+                    top: 35vh !important;
+                    left: 75vw !important;
+                }
+                #follow_4{
+                    height: 100px;
+                    width: 100px;
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                #serv_5{
+                    top: 74vh !important;
+                    left: 88vw !important;
+                    }#follow_5{
+                        height: 150px;
+                        width: 150px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+
+                    #serv_6{
+                        top: 9vh !important;
+                        left: 97vw !important;
+                        }#follow_6{
+                            height: 200px;
+                            width: 200px;
+                        }
+
+                        #serv_7{
+                            top: 74vh !important;
+                            left: 88vw !important;
+                            }#follow_7{
+                                height: 150px;
+                                width: 150px;
+                                img{
+                                    width: 100%;
+                                }
+                            }
 
 
-//vvvvv   WAVE   vvvvvv//
-//vvvvv   WAVE   vvvvvv//
-.rotate{
-    -ms-transform: rotate(90deg); // IE 9 
-    -webkit-transform: rotate(90deg); // Safari 
-     transform: rotate(90deg); // Standard syntax 
-}
+                            #scroll-down{
+                                position: absolute;
+                                top: 90vh !important;
+                                left: 45vw !important;
+                                background: none;
+                                border: none;
+                            }
 
-#wave-canvas-vertical-1{
-    position: relative;
-    top: -500px;
-}
-canvas{
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-}
+                            #mouse-wheel{
+                                animation: scroll-ball ease-in-out 1.9s infinite;
 
-/* Scale canvas with resize attribute to full size */
-canvas[resize] {
-    width: 100%;
-    height: 100%;
-}
+                            }
 
-//^^^^^   WAVE   ^^^^^^//
-//^^^^^   WAVE   ^^^^^^//
+                            .logo-tuvitrina{
+                                background-image: url("../img/logo-tuvitrina.png");
+                            }
+                            .logo-onewing{
+                                background-image: url("../img/logo-onewing-04.png");
 
-////////////////////    FOOTER    /////////////////////
-////////////////////    FOOTER    /////////////////////
-////////////////////    FOOTER    /////////////////////
-////////////////////    FOOTER    /////////////////////
-////////////////////    FOOTER    /////////////////////
+                            }
 
-//vvvvv   FOOTER   vvvvvv//
-//vvvvv   FOOTER   vvvvvv//
+                            .onewing-img{
+                                height: 320px;
+                                width: 320px;
+                                background-size: contain;
+                                background-repeat: no-repeat;
 
-footer{
-    width: 100%;
-    bottom: 0;
-    height: 200px;
-    background-color: black;
-}
+                                // border-radius: 100%;
+                                transition: filter 0.2s ease;
+                                // -webkit-filter: saturate(0); /* Safari 6.0 - 9.0 */
+                                // filter: saturate(0);
+                                // border: 1px solid #fff;
 
-//^^^^^   FOOTER   ^^^^^^//
-//^^^^^   FOOTER   ^^^^^^//
+                                &:hover{
+                                    -webkit-filter: saturate(2); /* Safari 6.0 - 9.0 */
+                                    filter: saturate(2);
+                                    transition: filter 0.2s ease;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .service-img{
+                                background-size: contain;
+                                background-repeat: no-repeat;
+
+                                // border-radius: 100%;
+                                transition: filter 0.2s ease;
+                                -webkit-filter: saturate(1); /* Safari 6.0 - 9.0 */
+                                filter: saturate(1);
+                                // border: 1px solid #fff;
+
+                                &:hover{
+                                    //-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+                                    // filter: grayscale(0%);
+                                    transition: filter 0.2s ease;
+                                    cursor: pointer;
+                                }
+                            }
+
+
+                            button{
+                                transition: background 0.5s ease;
+                                border-radius: 100%;
+                                overflow: hidden;
+                                &:hover {
+                                    order-radius: 100%;
+                                    overflow: hidden;
+                                    background: #00FFAA;
+                                    transition: background 0.5s ease;
+                                }
+                            }
+                        }
+
+                        .fill {
+                            position: absolute !important;
+                            bottom: 0%;
+                            right: 0%;
+                            left: 0%;
+                            top: 0%;
+                        }
+
+                        .expand-width {
+                            width: 50%;
+                        }
+
+                        .border {
+                            border: 2px dashed #00FFAA;
+                        }
+
+                        .wrapper {
+                            position: relative;
+                            max-width: 600px;
+                            margin: 0 auto;
+                            padding: 5%;
+                        }
+
+                        //^^^^^   PARLAX WORLD   ^^^^^^//
+                        //^^^^^   PARLAX WORLD   ^^^^^^//
+
+                        //vvvvv   Planes   vvvvvv//
+                        //vvvvv   Planes   vvvvvv//
+                        #planes-section{
+                            box-shadow: 0px -10px 10px @shadow;
+                            z-index: 10  !important;
+
+                            #planes-wrapper{
+                                z-index: 11  !important;
+                                display: flex;
+                                margin: 0 !important;
+                                padding: 0 !important;
+                                height: 100vh;
+
+                                .plan-apolo-wrapper{
+                                    margin:0;
+                                    background-color: #0CAACF;
+                                    z-index: 12 !important;
+                                    width: 100%;
+                                    height: 100%;
+                                    padding: 35px 15px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    @media(min-width: 991px){
+                                        width: 60%;
+                                    }
+                                }
+                                .otros-planes-wrapper{
+                                    margin:0;
+                                    background-color: #0554fa;
+                                    z-index: 12 !important;
+                                    width: 100%;
+                                    height: 100%;
+                                    @media(min-width: 991px){
+                                        width: 40%;
+                                    }
+
+                                    .plan-ares-wrapper{
+                                        margin:0;
+                                        height: 50%;
+                                        width: 100%;
+                                        background-color: #E6535B;
+                                        padding: 35px 15px;
+                                        z-index: 13 !important;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                    .plan-athenea-wrapper{
+                                        margin:0;
+                                        padding: 35px 15px;
+                                        height: 50%;
+                                        width: 100%;
+                                        background-color: #5F4896;
+                                        z-index: 13 !important;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                }
+
+                                .img-wrapper{
+                                    width: 50%;
+                                    margin: auto;
+                                    .wordpress{
+                                        max-height: 220px;
+                                    }
+                                    img{
+                                        width: 100%;
+                                    }
+
+                                }
+                                .info-wrapper{
+                                    color: white;
+                                    padding: 0 10%;
+                                    width: 100%;
+                                    .tittle{
+                                        font-size:30px;
+                                        font-family: 'Open Sans Condensed', sans-serif;
+                                        font-weight: bold;
+                                    }
+                                    .info{
+                                        font-family: 'Open Sans', sans-serif;
+                                        font-size: 18px;
+                                        margin-bottom: 25px;
+                                    }
+                                }
+                            }
+                        }
+
+                        #planes-extra-section{
+                            box-shadow: 0px -10px 10px @shadow;
+                            z-index: 20  !important;
+                            #planes-extra-wrapper{
+                                display: flex;
+                                margin: 0 !important;
+                                padding: 0 !important;
+                                height: 100vh;
+                                //background-color: #125cd0;
+                                z-index: 21 !important;
+
+                                .extra-plans-img{
+                                    background-color: #B1C041;
+                                    height: 100%;
+                                    width: 60%;
+                                    margin:0;
+                                    z-index: 22 !important;
+                                    overflow: hidden;
+                                    position: relative;
+                                    img{
+                                        position: absolute;
+                                        left: -10px;
+                                    }
+                                }
+                                .extra-plans-info{
+                                    color: white;
+                                    background-color: #384780;
+                                    height: 100%;
+                                    width: 40%;
+                                    margin:0;
+                                    padding: 5%;
+                                    z-index: 22 !important;
+                                    padding: 30px 30px 0 0;
+                                    .tittle{
+                                        color: @light-green;
+                                        font-size: 1.2em;
+                                        i{
+                                            font-size: 0.5em;
+                                        }
+                                    }
+                                    .bigText{
+                                        font-size: 1.4em;
+                                    }
+                                    .txt{
+
+                                    }
+                                }
+                            }
+                        }
+                        //^^^^^   Planes   ^^^^^^//
+                        //^^^^^   Planes   ^^^^^^//
+
+                    }
+
+                    .panel {
+                        box-shadow: 0px -10px 10px @shadow;
+                        height: 100%;
+                        width: 100%;
+
+                    }
+
+                    //^^^^^   Wiping panels   ^^^^^^//
+                    //^^^^^   Wiping panels   ^^^^^^//
+
+
+
+                    //vvvvv   CONTACTO   vvvvvv//
+                    //vvvvv   CONTACTO   vvvvvv//
+                    #conact-section{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        z-index: 30 !important;
+                        background-color: #0e0e0e;
+                        height: 100vh;
+
+                        #contact-wrapper{
+                            color: lightgray;
+                            #contact-info{
+                                max-width: 50vw;
+                            }
+                            .button-wrapper{
+                                color: lightgray;
+                                width: 100%;
+                                button{
+                                    background-color: transparent;
+                                    border: 2px solid #1200cc;
+                                    height: 50px;
+                                    width: 150px;
+
+                                    &:hover{
+                                        background-color: #fff;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    //^^^^^   CONTACTO   ^^^^^^//
+                    //^^^^^   CONTACTO   ^^^^^^//
+
+
+                    //vvvvv   WAVE   vvvvvv//
+                    //vvvvv   WAVE   vvvvvv//
+                    .rotate{
+                        -ms-transform: rotate(90deg); // IE 9
+                        -webkit-transform: rotate(90deg); // Safari
+                        transform: rotate(90deg); // Standard syntax
+                    }
+
+                    #wave-canvas-vertical-1{
+                        position: relative;
+                        top: -500px;
+                    }
+                    canvas{
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparent;
+                    }
+
+                    /* Scale canvas with resize attribute to full size */
+                    canvas[resize] {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    //^^^^^   WAVE   ^^^^^^//
+                    //^^^^^   WAVE   ^^^^^^//
+
+                    ////////////////////    FOOTER    /////////////////////
+                    ////////////////////    FOOTER    /////////////////////
+                    ////////////////////    FOOTER    /////////////////////
+                    ////////////////////    FOOTER    /////////////////////
+                    ////////////////////    FOOTER    /////////////////////
+
+                    //vvvvv   FOOTER   vvvvvv//
+                    //vvvvv   FOOTER   vvvvvv//
+
+                    footer{
+                        width: 100%;
+                        bottom: 0;
+                        height: 200px;
+                        background-color: black;
+                    }
+
+                    //^^^^^   FOOTER   ^^^^^^//
+                    //^^^^^   FOOTER   ^^^^^^//

@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-    
+
     <title>One Wing</title>
 
     <!-- Behavioral Meta Data -->
@@ -20,19 +20,19 @@
     <!-- Awesome font -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-    
+
     <!-- Jquery 1.11.3  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
+
     <!-- Elastic SVG elements -->
     <script src="lib/ElasticSVGElements/js/snap.svg-min.js"></script>
     <link rel="stylesheet" type="text/css" href="lib/ElasticSVGElements/css/button.css" />
-    
+
     <!-- Wiping panels -->
     <script type="text/javascript" src="lib/ScrollMagic-master/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script type="text/javascript" src="lib/ScrollMagic-master/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
-    
-    <!-- Waves 
+
+    <!-- Waves
     <script type="text/javascript" src="lib/paperjs-v0.10.2/dist/paper-full.js"></script>
     <script type="text/paperscript" canvas="wave-canvas-1">
         // Code ported to Paper.js from http://the389.com/9/1/
@@ -146,7 +146,7 @@
         }
     </script>
     -->
-    
+
     <!-- Scrollify -->
     <script type="text/javascript" src="lib/Scrollify-master/jquery.scrollify.js"></script>
     <script>
@@ -161,7 +161,7 @@
                 setHeights: true,
                 overflowScroll: true,
 
-                
+
                 before:function(i,panels) {
                     var ref = panels[i].attr("sectionName");
 
@@ -177,13 +177,13 @@
                         if(i===0) {
                             activeClass = "active";
                         }
-                        pagination +=   "<li><a class=\"indicador " + activeClass + 
-                                        "\" href=\"#" + $(this).attr("sectionName") + 
+                        pagination +=   "<li><a class=\"indicador " + activeClass +
+                                        "\" href=\"#" + $(this).attr("sectionName") +
                                         "\"></a></li>";
                                         /*
-                                        * <span class=\"hover-text\">" + 
-                                        * $(this).attr("sectionName").charAt(0).toUpperCase() + 
-                                        * $(this).attr("sectionName").slice(1) + 
+                                        * <span class=\"hover-text\">" +
+                                        * $(this).attr("sectionName").charAt(0).toUpperCase() +
+                                        * $(this).attr("sectionName").slice(1) +
                                         * "</span>
                                         */
                     });
@@ -192,7 +192,7 @@
 
                     $("#indicadores").append(pagination);
                 }
-                
+
             });
 
 
@@ -220,13 +220,15 @@
 
         <div id="extra-icons">
             <div id="menu-icons-wrapper">
-                <div id="contacto-wrapper" class="menu-icon">X</div>
-                <div id="share-wrapper" class="menu-icon">O</div>
-                <div id="lang-wrapper" class="menu-icon">EN</div>
-            </div>  
+                <div id="contacto-wrapper" class="menu-icon">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div id="share-wrapper" class="menu-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
+                <div id="lang-wrapper" class="menu-icon"><i class="fa fa-globe" aria-hidden="true"></i> <div class="text">EN/ES</div></div>
+            </div>
 
             <div id="menu-icon-wrapper">
-                <div id="menu-icon">U</div>
+                <div id="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
             </div>
 
         </div>

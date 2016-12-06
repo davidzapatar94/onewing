@@ -3,15 +3,15 @@
 <section id="indicadores" class="center">
     <!--
     <ul>
-        <li class="indicador active"></li>
-        <li class="indicador"></li>
-        <li class="indicador"></li>
-    </ul>
-    -->
+    <li class="indicador active"></li>
+    <li class="indicador"></li>
+    <li class="indicador"></li>
+</ul>
+-->
 </section>
 
 <section id="section-wipes">
-    
+
     <section id="parallax-world" class="scene-wrapper scroll-section panel" sectionName="parallax-world">
         <ul id="scene" class="scene fill">
             <!-- Logo layer -->
@@ -21,37 +21,55 @@
 
             <!-- Service 1 layer -->
             <li id="serv_1" class="layer" data-depth="2.50">
-                <div id="follow_1" class="logo-tuvitrina service-img"></div>
-                <span class="button__text">SERVICIO 1</span>
+                <a id="follow_1" href="#">
+                    <img src="assets/img/logos.png" alt=""/>
+                </a>
+                <span class="button__text">Logos</span>
             </li>
-            
+
             <!-- Service 2 layer -->
             <li id="serv_2" class="layer" data-depth="1.8">
-                <div id="follow_2" class="logo-tuvitrina service-img"></div>
-                <span class="button__text">SERVICIO 2</span>
+                <a id="follow_2" href="#">
+                    <img src="assets/img/logos.png" alt=""/>
+                </a>
+                <span class="button__text">Web</span>
             </li>
-            
+
             <!-- Service 3 layer -->
             <li id="serv_3" class="layer" data-depth="1.10">
-                <div id="follow_3" class="logo-tuvitrina service-img"></div>
-                <span class="button__text">SERVICIO 3</span>
+                <a id="follow_3" href="#">
+                    <img src="assets/img/logos.png" alt=""/>
+                </a>
+                <span class="button__text">Social Media</span>
             </li>
-            
+
             <!-- Service 4 layer -->
             <li id="serv_4" class="layer" data-depth="1.60">
-                <div id="follow_4" class="logo-tuvitrina service-img"></div>
-                <span class="button__text">SERVICIO 4</span>
+                <a id="follow_4" href="#">
+                    <img src="assets/img/logos.png" alt=""/>
+                </a>
+                <span class="button__text">Apps</span>
             </li>
-            
+
             <!-- Service 5 layer -->
             <li id="serv_5" class="layer" data-depth="1.60">
-                <div id="follow_5" class="logo-tuvitrina service-img"></div>
-                <span class="button__text">SERVICIO 5</span>
+                <a id="follow_5" href="#">
+                    <img src="assets/img/logos.png" alt=""/>
+                </a>
+                <span class="button__text">Modelado 3D</span>
             </li>
-            
+
             <!-- Service 6 layer -->
             <li id="serv_6" class="layer center" data-depth="3">
                 <div id="follow_6" class="logo-tuvitrina service-img"></div>
+            </li>
+
+            <!-- Service 7 layer -->
+            <li id="serv_5" class="layer" data-depth="1.60">
+                <a id="follow_7" href="#">
+                    <img src="assets/img/logos.png" alt=""/>
+                </a>
+                <span class="button__text">Ilustración</span>
             </li>
 
             <!-- Scroll layer -->
@@ -63,46 +81,48 @@
                 <span class="button__text"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
             </li>
 
+
         </ul>
     </section>
-    
+
+    <!-- Sección 2 -->
 
     <section id="planes-section" class="scroll-section panel" sectionName="planes-section">
         <div id="planes-wrapper" class="container-fluid">
-            <div class="plan-apolo-wrapper width_55">
+            <div class="plan-apolo-wrapper">
                 <div class="img-wrapper center">
-                    <img src="assets/img/plans-img.JPG" alt="plans-img.JPG">
+                    <img src="assets/img/plan1.svg" alt="plan1.svg">
                 </div>
-                    <div class="info-wrapper center">
-                        <div>
-                            <p class="tittle uppercase">plan apolo</p>
-                            <div class="separador separador-mini separador-planes"></div>
-                            <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quidem quo quibusdam nesciunt, eligendi corporis rem tenetur aliquam distinctio vel ipsum ipsam autem porro fugit dolores nihil veritatis itaque iure.</p>
-                        </div>
+                <div class="info-wrapper">
+                    <div>
+                        <p class="tittle uppercase">plan apolo</p>
+                        <div class="separador separador-mini separador-planes"></div>
+                        <p class="info">Escoge un esquema y te lo personalizamos para que se ajuste a la imagen de tu empresa. Fácil, rápido y económico.</p>
                     </div>
+                </div>
             </div>
-            <div class="otros-planes-wrapper width_45">
+            <div class="otros-planes-wrapper">
                 <div class="plan-ares-wrapper">
                     <div class="img-wrapper center">
-                        <img src="assets/img/plans-img.JPG" alt="plans-img.JPG">
+                        <img src="assets/img/plan2.svg" alt="plans-img.JPG">
                     </div>
-                    <div class="info-wrapper center">
+                    <div class="info-wrapper">
                         <div>
                             <p class="tittle uppercase">plan ares</p>
                             <div class="separador separador-mini separador-planes"></div>
-                            <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem illum quibusdam</p>
+                            <p class="info">Crea tu propia web a la medida. Desde el diseño hasta el desarrollo 100% personalizado.</p>
                         </div>
                     </div>
                 </div>
                 <div class="plan-athenea-wrapper">
                     <div class="img-wrapper center">
-                        <img src="assets/img/plans-img.JPG" alt="plans-img.JPG">
+                        <img class="wordpress" src="assets/img/plan3.svg" alt="plans-img.JPG">
                     </div>
-                    <div class="info-wrapper center">
+                    <div class="info-wrapper">
                         <div>
                             <p class="tittle uppercase">plan athenea</p>
                             <div class="separador separador-mini separador-planes"></div>
-                            <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse </p>
+                            <p class="info">Crea tu propio sitio web administrable.</p>
                         </div>
                     </div>
                 </div>
@@ -114,18 +134,27 @@
     <section id="planes-extra-section" class="scroll-section panel" sectionName="planes-extra-section">
         <div id="planes-extra-wrapper" class="container-fluid">
 
-            <div class="extra-plans-img width_45 center">
-                <img src="assets/img/plans-img.JPG" alt="plans-img.JPG">
+            <div class="extra-plans-img">
+                <img src="assets/img/mas-contenido.svg" alt="plans-img.JPG">
             </div>
 
-            <div class="extra-plans-info width_55">
+            <div class="extra-plans-info">
                 <p>
-                    <span class="tittle uppercase"><i class="fa fa-circle" aria-hidden="true"></i>Lorem ipsum dolor sit amet</span><br>
-                    <span class="bigText uppercase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate optio sunt ex explicabo id.</span><br>
-                    <span class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fugiat quibusdam quo!.</span>
+                    <div class="tittle uppercase">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        MÁS CONTENIDO
+                    </div>
+
+                    <div class="bigText uppercase">
+                        Busca el plan que se ajuste a tu presupuesto en el servicio que estás buscando.
+                    </div>
+
+                    <div class="txt">
+                        Descubre los paquetes especiales para los diferentes servicios que ofrecemos.
+                    </div>
                 </p>
             </div>
-            
+
         </div>
     </section>
 
@@ -145,36 +174,36 @@
 
     <!-- Wiping panels code -->
     <script>
-        $(function () { // wait for document ready
-            // init
-            var controller = new ScrollMagic.Controller({
-    
-                globalSceneOptions: {
-                    triggerHook: 'onLeave'
-                }
-            });
+    $(function () { // wait for document ready
+        // init
+        var controller = new ScrollMagic.Controller({
 
-            // get all slides
-            var slides = document.querySelectorAll("section.panel");
-
-            // create scene for every slide
-            for (var i=0; i<slides.length; i++) {
-                new ScrollMagic.Scene({
-
-                        triggerElement: slides[i]
-                    })
-                    .setPin(slides[i])
-                    // .addIndicators() // add indicators (requires plugin)
-                    .addTo(controller);
+            globalSceneOptions: {
+                triggerHook: 'onLeave'
             }
         });
+
+        // get all slides
+        var slides = document.querySelectorAll("section.panel");
+
+        // create scene for every slide
+        for (var i=0; i<slides.length; i++) {
+            new ScrollMagic.Scene({
+
+                triggerElement: slides[i]
+            })
+            .setPin(slides[i])
+            // .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+        }
+    });
     </script>
 
 </section>
 
 <!--
 <div id="wave-1">
-    <canvas id="wave-canvas-1" resize hidpi="off"></canvas>
+<canvas id="wave-canvas-1" resize hidpi="off"></canvas>
 </div>
 -->
 
