@@ -30,6 +30,11 @@
     }
 }
 
+.hover-purple{
+    &:hover{
+        background-color: rebeccapurple;
+    }
+}
 
 $light-green:       #B1C041;
 

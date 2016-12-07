@@ -228,16 +228,16 @@
 
       <div id="extra-icons">
          <div id="menu-icons-wrapper">
-            <div id="contacto-wrapper" class="menu-icon">
-               <a class="btn-floating btn-large waves-effect waves-light transparent z-depth-0"><i class="material-icons">mail</i></a>
+            <div id="contacto-wrapper" class=" menu-icon">
+               <a class="hover-purple valign-wrapper btn-floating btn-large waves-effect waves-purple transparent z-depth-0"><i class="material-icons">mail</i></a>
                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
             </div>
-            <div id="share-wrapper" class="menu-icon">
-               <a class="btn-floating btn-large waves-effect waves-light transparent z-depth-0"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+            <div id="share-wrapper" class=" menu-icon">
+               <a class="hover-purple valign-wrapper btn-floating btn-large waves-effect waves-purple transparent z-depth-0"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
                <!-- <i class="fa fa-share-alt" aria-hidden="true"></i> -->
             </div>
-            <div id="lang-wrapper" class="menu-icon">
-               <a class="btn-floating btn-large waves-effect waves-light transparent z-depth-0"><i class="material-icons">language</i></a>
+            <div id="lang-wrapper" class=" menu-icon">
+               <a class="hover-purple valign-wrapper btn-floating btn-large waves-effect waves-purple transparent z-depth-0"><i class="material-icons">language</i></a>
                <!-- <i class="fa fa-globe" aria-hidden="true"></i> -->
                <div class="text">EN/ES</div>
             </div>
