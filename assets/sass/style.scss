@@ -49,6 +49,16 @@ body {
     text-transform: uppercase;
 }
 
+.no-decoration{
+  text-decoration: none !important;
+}
+
+.hover-background-purple{
+  &:hover{
+    background-color: rebeccapurple;
+  }
+}
+
 //////////////////////// SEPARADORES //////////////////////
 //////////////////////// SEPARADORES //////////////////////
 //////////////////////// SEPARADORES //////////////////////
@@ -84,16 +94,22 @@ $shadow: rgba(0, 0, 0, 0.5);
 //vvvvv   MENU   vvvvvv//
 
 #menu-bar{
-    position: relative;
-    width: 100%;
-    top: 50px;
-    height: 65px;
-    z-index: 1;
+  position: relative;
+  width: 100%;
+  top: 50px;
+  height: 65px;
+  z-index: 3;
+  animation-name: aparecer_menu;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+  opacity:0;
 
-    display: flex;
-    //justify-content: center;
-    align-items: center;
-    color: white;
+  @keyframes aparecer_menu {
+    from { opacity:0;}
+    to { opacity:1;}
+  }
 
     #extra-icons{
         #menu-icons-wrapper{
@@ -134,7 +150,7 @@ $shadow: rgba(0, 0, 0, 0.5);
                 align-items: center;
                 &:hover{
                     .text{
-                        margin-left: 0;
+                        margin-left: 10px;
                         -moz-transition: all 0.5s ease;
                         -o-transition: all 0.5s ease;
                         -webkit-transition: all 0.5s ease;
@@ -146,7 +162,7 @@ $shadow: rgba(0, 0, 0, 0.5);
                 }
                 .text{
                     font-size: 18px;
-                    margin-left: -15px;
+                    margin-left: 0;
                     -moz-transition: all 0.5s ease;
                     -o-transition: all 0.5s ease;
                     -webkit-transition: all 0.5s ease;
@@ -238,10 +254,46 @@ $shadow: rgba(0, 0, 0, 0.5);
 //vvvvv   Wiping panels   vvvvvv//
 //vvvvv   Wiping panels   vvvvvv//
 #section-wipes{
-    position: relative;
-    //top: 100vh;
-    margin-top: -65px;
-    height: 100vh;
+  position: relative;
+  //top: 100vh;
+  margin-top: -65px;
+  height: 100vh;
+
+  @keyframes barra {
+    from { height: 120px;}
+    to { height: 0;}
+  }
+.rect-top{
+  height: 120px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index:2;
+  animation-name: barra;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+    animation-delay: 0.5s;
+}
+
+.rect-bot{
+  height: 120px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index:2;
+  bottom: 0;
+  animation-name: barra;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+
+  @keyframes barra {
+    from { height: 120px;}
+    to { height: 0;}
+  }
+}
 
     //vvvvv   PARLAX WORLD   vvvvvv//
     //vvvvv   PARLAX WORLD   vvvvvv//
