@@ -1,8 +1,10 @@
 <!--
 <footer>
-FOOTER  
+FOOTER
 </footer>
 -->
+
+
     <!-- Parallax-master -->
     <script src="lib/parallax-master/deploy/parallax.js"></script>
     <script>
@@ -83,14 +85,14 @@ FOOTER
         (function() {
 
             function extend( a, b ) {
-                for( var key in b ) { 
+                for( var key in b ) {
                     if( b.hasOwnProperty( key ) ) {
                         a[key] = b[key];
                     }
                 }
                 return a;
             }
-            
+
             function SVGButton( el, options ) {
                 this.el = el;
                 this.options = extend( {}, this.options );
@@ -145,11 +147,15 @@ FOOTER
                 } );
             } );
 
-        })();           
+        })();
     </script>
 
     <script type="text/javascript" src="lib/ScrollMagic-master/js/tracking.js"></script>
+
+    <!-- materialize JS -->
+    <script type="text/javascript" src="lib\materialize-src\js\bin\materialize.min.js"></script>
+
     <!-- Javascript stylesheet -->
-    <script type="text/javascript" href="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
