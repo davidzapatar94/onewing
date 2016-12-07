@@ -11,6 +11,7 @@
 </section>
 
 <section id="section-wipes">
+  <div class="rect-top"></div>
 
     <section id="parallax-world" class="scene-wrapper scroll-section panel" sectionName="parallax-world">
         <ul id="scene" class="scene fill">
@@ -84,6 +85,7 @@
 
         </ul>
     </section>
+    <div class="rect-bot"></div>
 
     <!-- Sección 2 -->
 
