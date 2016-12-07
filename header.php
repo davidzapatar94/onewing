@@ -20,9 +20,17 @@
     <!-- Awesome font -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="lib/materialize-src/css/materialize.min.css"  media="screen,projection"/>
 
     <!-- Jquery 1.11.3  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+
+    <!-- Jquery 2.1.1  -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 
     <!-- Elastic SVG elements -->
     <script src="lib/ElasticSVGElements/js/snap.svg-min.js"></script>
