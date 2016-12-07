@@ -22,7 +22,7 @@
             <!-- Service 1 layer -->
             <li id="serv_1" class="layer" data-depth="2.50">
                 <a id="follow_1" href="#">
-                    <img src="assets/img/logos.png" alt=""/>
+                    <img src="assets/img/logotipos.svg" alt=""/>
                 </a>
                 <span class="button__text">Logos</span>
             </li>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="info-wrapper">
                     <div>
-                        <p class="tittle uppercase">plan apolo</p>
+                        <p class="tittle ">plan apolo</p>
                         <div class="separador separador-mini separador-planes"></div>
                         <p class="info">Escoge un esquema y te lo personalizamos para que se ajuste a la imagen de tu empresa. Fácil, rápido y económico.</p>
                     </div>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="info-wrapper">
                         <div>
-                            <p class="tittle uppercase">plan ares</p>
+                            <p class="tittle ">plan ares</p>
                             <div class="separador separador-mini separador-planes"></div>
                             <p class="info">Crea tu propia web a la medida. Desde el diseño hasta el desarrollo 100% personalizado.</p>
                         </div>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="info-wrapper">
                         <div>
-                            <p class="tittle uppercase">plan athenea</p>
+                            <p class="tittle ">plan athenea</p>
                             <div class="separador separador-mini separador-planes"></div>
                             <p class="info">Crea tu propio sitio web administrable.</p>
                         </div>
@@ -139,20 +139,34 @@
             </div>
 
             <div class="extra-plans-info">
-                <p>
-                    <div class="tittle uppercase">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        MÁS CONTENIDO
-                    </div>
 
-                    <div class="bigText uppercase">
-                        Busca el plan que se ajuste a tu presupuesto en el servicio que estás buscando.
-                    </div>
+                <div class="tittle">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    MÁS CONTENIDO
+                </div>
 
-                    <div class="txt">
-                        Descubre los paquetes especiales para los diferentes servicios que ofrecemos.
-                    </div>
-                </p>
+                <div class="bigText">
+                    Busca el plan que se ajuste a tu presupuesto en el servicio que estás buscando.
+                </div>
+
+                <div class="txt">
+                    Descubre los paquetes especiales para los diferentes servicios que ofrecemos.
+                </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+                    <defs>
+                        <filter id="filter-goo-3">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                            <feComposite in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+                <button id="component-3" class="button button--2 button--3" style="filter: url('#filter-goo-3')">
+                    Click me
+                    <span class="button__bg"></span>
+                </button>
+
             </div>
 
         </div>
@@ -161,7 +175,7 @@
 
     <section id="conact-section" class="panel scroll-section" sectionName="conact-section">
         <div id="contact-wrapper">
-            <h1> CONTÁCTENOS </h1>
+            <div class="titulo"> CONTÁCTENOS </div>
             <div class="separador separador-contacto"></div>
             <p id="contact-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam sequi reprehenderit sapiente repellat fugit cum, dignissimos non culpa, hic sed ullam. Cupiditate sit officiis consequatur blanditiis, quidem porro molestiae, architecto.</p>
             <div class="button-wrapper center">
