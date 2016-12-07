@@ -4929,12 +4929,12 @@ small {
 }
 
 .btn-floating.btn-large {
-				width: 56px;
-				height: 56px;
+				width: 45px;
+				height: 45px;
 }
 
 .btn-floating.btn-large i {
-				line-height: 56px;
+				line-height: 45px;
 }
 
 button.btn-floating {
@@ -4976,7 +4976,7 @@ button.btn-floating {
 
 .fixed-action-btn.toolbar {
 				padding: 0;
-				height: 56px;
+				height: 45px;
 }
 
 .fixed-action-btn.toolbar.active > a i {
@@ -5006,7 +5006,7 @@ button.btn-floating {
 				background-color: transparent;
 				box-shadow: none;
 				color: #fff;
-				line-height: 56px;
+				line-height: 45px;
 				z-index: 1;
 }
 
