@@ -226,6 +226,7 @@
 <header>
     <section id="menu-bar" class="">
 
+<<<<<<< HEAD
         <div id="extra-icons">
             <div id="menu-icons-wrapper">
                 <div id="contacto-wrapper" class="menu-icon">
@@ -234,6 +235,24 @@
                 <div id="share-wrapper" class="menu-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></div>
                 <div id="lang-wrapper" class="menu-icon"><i class="fa fa-globe" aria-hidden="true"></i> <div class="text">EN/ES</div></div>
             </div>
+=======
+      <div id="extra-icons">
+         <div id="menu-icons-wrapper">
+            <div id="contacto-wrapper" class="menu-icon">
+               <a class="btn-floating btn-large waves-effect waves-light transparent z-depth-0"><i class="material-icons">mail</i></a>
+               <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+            </div>
+            <div id="share-wrapper" class="menu-icon">
+               <a class="btn-floating btn-large waves-effect waves-light transparent z-depth-0"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+               <!-- <i class="fa fa-share-alt" aria-hidden="true"></i> -->
+            </div>
+            <div id="lang-wrapper" class="menu-icon">
+               <a class="btn-floating btn-large waves-effect waves-light transparent z-depth-0"><i class="material-icons">language</i></a>
+               <!-- <i class="fa fa-globe" aria-hidden="true"></i> -->
+               <div class="text">EN/ES</div>
+            </div>
+         </div>
+>>>>>>> parent of 160bc75... ay va xD
 
             <div id="menu-icon-wrapper">
                 <div id="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
