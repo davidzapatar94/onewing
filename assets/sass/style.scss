@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,700|Playfair+Display:400,700');
- 
+
+/////////////////// VARIABLES ///////////////
+$light-green:       #B1C041;
+$shadow: rgba(0, 0, 0, 0.5);
+
+
+
+////////////////////////////MIXINS////////////////////////
+@mixin boing-background($radius, $time) {
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    width: $radius;
+    height: $radius;
+    border-radius: 100%;
+    background: rebeccapurple;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: opacity $time , -webkit-transform $time;
+    transition: opacity $time , -webkit-transform $time;
+    transition: transform $time , opacity $time;
+    transition: transform $time , opacity $time , -webkit-transform $time;
+    transition: transform $time cubic-bezier(0.54, 1.54, 0.43, 0.94), -webkit-transform $time cubic-bezier(0.54, 1.54, 0.43, 0.94);
+    // opacity: 0;
+  }
+  &:hover{
+    &:before{
+      // z-index: 0;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+
+
+
+//////////////////////////ANIMACIONES///////////////////////////
 @keyframes boing{
   0% {height: 150px; width: 150px;}
   50%{height: 155px; width: 155px;}
@@ -39,9 +78,6 @@
 }
 
 
-
-$light-green:       #B1C041;
-
 html,
 body {
   margin: 0 ;
@@ -80,7 +116,6 @@ body {
   background-color: white;
 }
 
-$shadow: rgba(0, 0, 0, 0.5);
 
 ///////////////////    HEADER   /////////////////////
 ///////////////////    HEADER   /////////////////////
