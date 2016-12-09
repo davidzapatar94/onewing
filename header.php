@@ -228,22 +228,22 @@
 
       <div id="extra-icons">
          <div id="menu-icons-wrapper">
-            <div id="contacto-wrapper" class="menu-icon">
-               <a class="valign-wrapper center-align btn-floating transparent z-depth-0">
-                  <i class="hover-background-purple waves-effect waves-light material-icons">mail</i>
+            <div id="contacto-wrapper" class="menu-icon hover-background-purple waves-effect waves-circle waves-light valign-wrapper center-align">
+               <a class="btn-floating transparent z-depth-0">
+                  <i class="material-icons">mail</i>
                </a>
             </div>
-            <div id="share-wrapper" class="menu-icon">
-               <a class="valign-wrapper center-align btn-floating transparent z-depth-0">
-                  <i class="hover-background-purple waves-effect waves-light fa fa-share-alt" aria-hidden="true"></i>
+            <div id="share-wrapper" class="menu-icon hover-background-purple waves-effect waves-circle waves-light valign-wrapper center-align">
+               <a class="btn-floating transparent z-depth-0">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
                </a>
             </div>
-            <div id="lang-wrapper" class="menu-icon">
-               <a class="no-decoration valign-wrapper center-align btn-floating transparent z-depth-0">
-                  <i class="hover-background-purple waves-effect waves-circle waves-light material-icons">language</i>
+            <div id="lang-wrapper" class="menu-icon hover-background-purple waves-effect waves-circle waves-light valign-wrapper center-align">
+               <a class="no-decoration btn-floating transparent z-depth-0">
+                  <i class="material-icons">language</i>
                </a>
-               <div class="text">EN/ES</div>
             </div>
+            <div class="text">EN/ES</div>
          </div>
 
          <div id="menu-icon-wrapper">
