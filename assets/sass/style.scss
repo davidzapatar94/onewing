@@ -67,15 +67,19 @@ $shadow: rgba(0, 0, 0, 0.5);
 }
 
 
+
+/////////////////////////////// GENERAL CLASSES //////////////////
 .no-decoration{
   text-decoration: none !important;
 }
 
 .hover-background-purple{
-  &:hover{
-    background-color: rebeccapurple;
-  }
+
+  @include boing-background(47px, .3s);
+  // background-color: red;
+
 }
+
 
 
 html,
