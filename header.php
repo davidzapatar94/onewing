@@ -228,22 +228,28 @@
 
       <div id="extra-icons">
          <div id="menu-icons-wrapper">
-            <div id="contacto-wrapper" class="menu-icon hover-background-purple waves-effect waves-circle waves-light valign-wrapper center-align">
-               <a class="btn-floating transparent z-depth-0">
+            <div id="contacto-wrapper" class="menu-icon valign-wrapper center-align">
+               <a href="#1" class="btn-floating transparent z-depth-0">
                   <i class="material-icons">mail</i>
+                  <div class="hover-background-purple waves-effect waves-circle waves-light"></div>
                </a>
             </div>
-            <div id="share-wrapper" class="menu-icon hover-background-purple waves-effect waves-circle waves-light valign-wrapper center-align">
-               <a class="btn-floating transparent z-depth-0">
+
+            <div id="share-wrapper" class="menu-icon valign-wrapper center-align">
+               <a href="#2" class="btn-floating transparent z-depth-0">
                   <i class="fa fa-share-alt" aria-hidden="true"></i>
+                  <div class="hover-background-purple waves-effect waves-circle waves-light"></div>
                </a>
             </div>
-            <div id="lang-wrapper" class="menu-icon hover-background-purple waves-effect waves-circle waves-light valign-wrapper center-align">
-               <a class="no-decoration btn-floating transparent z-depth-0">
+
+            <div id="lang-wrapper" class="menu-icon valign-wrapper center-align">
+               <a href="#3" class="no-decoration btn-floating transparent z-depth-0">
                   <i class="material-icons">language</i>
+                  <div class="hover-background-purple waves-effect waves-circle waves-light"></div>
                </a>
             </div>
             <div class="text">EN/ES</div>
+
          </div>
 
          <div id="menu-icon-wrapper">
@@ -253,5 +259,5 @@
       </div>
 
    </section>
-   
+
 </header>

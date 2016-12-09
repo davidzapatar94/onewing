@@ -39,10 +39,11 @@
 				text-decoration: none !important;
 }
 
-.hover-background-purple:before {
+.hover-background-purple {
 				content: '';
 				display: block;
 				position: absolute;
+				top: 0;
 				width: 47px;
 				height: 47px;
 				border-radius: 100%;
@@ -54,9 +55,10 @@
 				transition: transform 0.3s, opacity 0.3s;
 				transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
 				transition: transform 0.3s cubic-bezier(0.54, 1.54, 0.43, 0.94), -webkit-transform 0.3s cubic-bezier(0.54, 1.54, 0.43, 0.94);
+				z-index: -1;
 }
 
-.hover-background-purple:hover:before {
+.hover-background-purple:hover {
 				-webkit-transform: scale(1);
 				transform: scale(1);
 }
@@ -131,6 +133,20 @@ body {
 
 #menu-bar #extra-icons #menu-icons-wrapper .menu-icon {
 				cursor: pointer;
+}
+
+#menu-bar #extra-icons #menu-icons-wrapper .menu-icon a {
+				width: 47px;
+				height: 47px;
+}
+
+#menu-bar #extra-icons #menu-icons-wrapper .menu-icon a:hover div.hover-background-purple {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+}
+
+#menu-bar #extra-icons #menu-icons-wrapper .menu-icon a i {
+				pointer-events: none;
 }
 
 #menu-bar #extra-icons #menu-icons-wrapper #contacto-wrapper {
