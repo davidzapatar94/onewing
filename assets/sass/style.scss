@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,700|Playfair+Display:400,700');
 
+
+/////////////////// VARIABLES ///////////////
+$light-green:       #B1C041;
+$shadow: rgba(0, 0, 0, 0.5);
+
+
+
+////////////////////////////MIXINS////////////////////////
+@mixin boing-background($radius, $time) {
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    // top: 50%;
+    // left: 50%;
+    width: $radius;
+    height: $radius;
+    border-radius: 100%;
+    background: rebeccapurple;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: opacity $time , -webkit-transform $time;
+    transition: opacity $time , -webkit-transform $time;
+    transition: transform $time , opacity $time;
+    transition: transform $time , opacity $time , -webkit-transform $time;
+    transition: transform $time cubic-bezier(0.54, 1.54, 0.43, 0.94), -webkit-transform $time cubic-bezier(0.54, 1.54, 0.43, 0.94);
+    // opacity: 0;
+  }
+  &:hover{
+    &:before{
+      // z-index: 0;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+
+
+
+//////////////////////////ANIMACIONES///////////////////////////
 @keyframes boing{
   0% {height: 150px; width: 150px;}
   50%{height: 155px; width: 155px;}
@@ -28,19 +68,22 @@
 }
 
 
+
+/////////////////////////////// GENERAL CLASSES //////////////////
 .no-decoration{
   text-decoration: none !important;
 }
 
 .hover-background-purple{
-  &:hover{
-    background-color: rebeccapurple;
-  }
+
+  @include boing-background(47px, .3s);
+  // background-color: red;
+
 }
 
 
 
-$light-green:       #B1C041;
+
 
 html,
 body {
@@ -80,7 +123,6 @@ body {
   background-color: white;
 }
 
-$shadow: rgba(0, 0, 0, 0.5);
 
 ///////////////////    HEADER   /////////////////////
 ///////////////////    HEADER   /////////////////////
@@ -104,7 +146,7 @@ $shadow: rgba(0, 0, 0, 0.5);
   animation-delay: 1s;
   opacity:0;
 
-@keyframes aparecer_menu {
+  @keyframes aparecer_menu {
     from { opacity:0;}
     to { opacity:1;}
   }
@@ -272,37 +314,37 @@ $shadow: rgba(0, 0, 0, 0.5);
     from { height: 120px;}
     to { height: 0;}
   }
-.rect-top{
-  height: 120px;
-  width: 100%;
-  background-color: black;
-  position: absolute;
-  z-index:2;
-  animation-name: barra;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+  .rect-top{
+    height: 120px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    z-index:2;
+    animation-name: barra;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
     animation-delay: 0.5s;
-}
-
-.rect-bot{
-  height: 120px;
-  width: 100%;
-  background-color: black;
-  position: absolute;
-  z-index:2;
-  bottom: 0;
-  animation-name: barra;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
-  animation-delay: 0.5s;
-
-  @keyframes barra {
-    from { height: 120px;}
-    to { height: 0;}
   }
-}
+
+  .rect-bot{
+    height: 120px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    z-index:2;
+    bottom: 0;
+    animation-name: barra;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.5s;
+
+    @keyframes barra {
+      from { height: 120px;}
+      to { height: 0;}
+    }
+  }
 
   //vvvvv   PARLAX WORLD   vvvvvv//
   //vvvvv   PARLAX WORLD   vvvvvv//
@@ -340,464 +382,464 @@ $shadow: rgba(0, 0, 0, 0.5);
 
 
 
-      #logo, #serv_1, #serv_2, #serv_3, #serv_4, #serv_5, #serv_6{
-        position: relative;
-        height: 150px;
-        width: 150px;
-        .button__text{
-          color: #fff;
+    #logo, #serv_1, #serv_2, #serv_3, #serv_4, #serv_5, #serv_6{
+      position: relative;
+      height: 150px;
+      width: 150px;
+      .button__text{
+        color: #fff;
+        font-family: 'Open Sans Condensed', sans-serif;
+      }
+    }
+
+    #logo{
+      top: 22vh !important;
+      left: 37vw !important;
+      height: 300px;
+      width: 300px;
+    }
+
+    #serv_1{
+      top: 9vh !important;
+      left: 5vw !important;
+    }#follow_1{
+      height: 160px;
+      width: 160px;
+      img{
+        width: 100%;
+      }
+    }
+
+    #serv_2{
+      top: 47vh !important;
+      left: -5vw !important;
+    }#follow_2{
+      height: 120px;
+      width: 120px;
+      img{
+        width: 100%;
+      }
+    }
+
+    #serv_3{
+      top: 76vh !important;
+      left: 16vw !important;
+    }
+    #follow_3{
+      height: 90px;
+      width: 90px;
+      img{
+        width: 100%;
+      }
+    }
+
+    #serv_4{
+      top: 35vh !important;
+      left: 75vw !important;
+    }
+    #follow_4{
+      height: 100px;
+      width: 100px;
+      img{
+        width: 100%;
+      }
+    }
+
+    #serv_5{
+      top: 74vh !important;
+      left: 88vw !important;
+    }#follow_5{
+      height: 150px;
+      width: 150px;
+      img{
+        width: 100%;
+      }
+    }
+
+    #serv_6{
+      top: 9vh !important;
+      left: 97vw !important;
+    }#follow_6{
+      height: 200px;
+      width: 200px;
+    }
+
+    #serv_7{
+      top: 74vh !important;
+      left: 88vw !important;
+    }#follow_7{
+      height: 150px;
+      width: 150px;
+      img{
+        width: 100%;
+      }
+    }
+
+
+    #scroll-down{
+      top: 90vh !important;
+      right: 0;
+      text-align: center;
+      background: none;
+      border: none;
+    }
+
+    #mouse-wheel{
+      animation: scroll-ball ease-in-out 1.9s infinite;
+
+    }
+
+    .logo-tuvitrina{
+      background-image: url("../img/logo-tuvitrina.png");
+    }
+    .logo-onewing{
+      background-image: url("../img/logo-onewing-04.png");
+
+    }
+
+    .onewing-img{
+      height: 320px;
+      width: 320px;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      // border-radius: 100%;
+      transition: filter 0.2s ease;
+      // -webkit-filter: saturate(0); /* Safari 6.0 - 9.0 */
+      // filter: saturate(0);
+      // border: 1px solid #fff;
+
+      &:hover{
+        -webkit-filter: saturate(2); /* Safari 6.0 - 9.0 */
+        filter: saturate(2);
+        transition: filter 0.2s ease;
+        cursor: pointer;
+      }
+    }
+
+    .service-img{
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      // border-radius: 100%;
+      transition: filter 0.2s ease;
+      -webkit-filter: saturate(1); /* Safari 6.0 - 9.0 */
+      filter: saturate(1);
+      // border: 1px solid #fff;
+
+      &:hover{
+        //-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+        // filter: grayscale(0%);
+        transition: filter 0.2s ease;
+        cursor: pointer;
+      }
+    }
+
+
+    button{
+      transition: background 0.5s ease;
+      border-radius: 100%;
+      overflow: hidden;
+      &:hover {
+        order-radius: 100%;
+        overflow: hidden;
+        background: #00FFAA;
+        transition: background 0.5s ease;
+      }
+    }
+  }
+
+  .fill {
+    position: absolute !important;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    top: 0%;
+  }
+
+  .expand-width {
+    width: 50%;
+  }
+
+  .border {
+    border: 2px dashed #00FFAA;
+  }
+
+  .wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 5%;
+  }
+
+  //^^^^^   PARLAX WORLD   ^^^^^^//
+  //^^^^^   PARLAX WORLD   ^^^^^^//
+
+  //vvvvv   Planes   vvvvvv//
+  //vvvvv   Planes   vvvvvv//
+  #planes-section{
+    box-shadow: 0px -10px 10px $shadow;
+    z-index: 10  !important;
+
+    #planes-wrapper{
+      z-index: 11  !important;
+      display: flex;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100vh;
+
+      .plan-apolo-wrapper{
+        margin:0;
+        background-color: #0CAACF;
+        z-index: 12 !important;
+        width: 100%;
+        height: 100%;
+        padding: 35px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media(min-width: 991px){
+          width: 60%;
+        }
+      }
+      .otros-planes-wrapper{
+        margin:0;
+        background-color: #0554fa;
+        z-index: 12 !important;
+        width: 100%;
+        height: 100%;
+        @media(min-width: 991px){
+          width: 40%;
+        }
+
+        .plan-ares-wrapper{
+          margin:0;
+          height: 50%;
+          width: 100%;
+          background-color: #E6535B;
+          padding: 35px 15px;
+          z-index: 13 !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .plan-athenea-wrapper{
+          margin:0;
+          padding: 35px 15px;
+          height: 50%;
+          width: 100%;
+          background-color: #5F4896;
+          z-index: 13 !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .img-wrapper{
+        width: 50%;
+        margin: auto;
+        .wordpress{
+          max-height: 220px;
+        }
+        img{
+          width: 100%;
+        }
+
+      }
+      .info-wrapper{
+        color: white;
+        padding: 0 10%;
+        width: 100%;
+        .tittle{
+          font-size:30px;
           font-family: 'Open Sans Condensed', sans-serif;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        .info{
+          font-family: 'Open Sans', sans-serif;
+          font-size: 18px;
+          margin-bottom: 25px;
         }
       }
+    }
+  }
 
-      #logo{
-        top: 22vh !important;
-        left: 37vw !important;
-        height: 300px;
-        width: 300px;
+  #planes-extra-section{
+    box-shadow: 0px -10px 10px $shadow;
+    z-index: 20  !important;
+    #planes-extra-wrapper{
+      display: flex;
+      margin: 0 !important;
+      padding: 0 !important;
+      height: 100vh;
+      //background-color: #125cd0;
+      z-index: 21 !important;
+
+      .extra-plans-img{
+        background-color: #B1C041;
+        height: 100%;
+        width: 60%;
+        margin:0;
+        z-index: 22 !important;
+        overflow: hidden;
+        position: relative;
+        img{
+          position: absolute;
+          left: -10px;
+          bottom: 0;
+          max-width: 1024px;
+        }
       }
-
-      #serv_1{
-        top: 9vh !important;
-        left: 5vw !important;
-        }#follow_1{
-          height: 160px;
-          width: 160px;
-          img{
-            width: 100%;
+      .extra-plans-info{
+        color: white;
+        background-color: #384780;
+        height: 100%;
+        width: 40%;
+        margin:0;
+        z-index: 22 !important;
+        padding: 30px 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .tittle{
+          color: $light-green;
+          font-size: 25px;
+          margin-bottom: 15px;
+          font-family: 'Open Sans Condensed', sans-serif;
+          font-weight: bold;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          i{
+            font-size: 15px;
+            margin-right: 10px;
           }
         }
+        .bigText{
+          font-size: 35px;
+          font-family: 'Playfair Display', serif;
+          line-height: 45px;
+        }
+        .txt{
+          font-family: 'Open Sans', sans-serif;
+          margin-top: 25px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  //^^^^^   Planes   ^^^^^^//
+  //^^^^^   Planes   ^^^^^^//
 
-        #serv_2{
-          top: 47vh !important;
-          left: -5vw !important;
-          }#follow_2{
-            height: 120px;
-            width: 120px;
-            img{
-              width: 100%;
-            }
-          }
+}
 
-          #serv_3{
-            top: 76vh !important;
-            left: 16vw !important;
-          }
-          #follow_3{
-            height: 90px;
-            width: 90px;
-            img{
-              width: 100%;
-            }
-          }
+.panel {
+  box-shadow: 0px -10px 10px $shadow;
+  height: 100%;
+  width: 100%;
 
-          #serv_4{
-            top: 35vh !important;
-            left: 75vw !important;
-          }
-          #follow_4{
-            height: 100px;
-            width: 100px;
-            img{
-              width: 100%;
-            }
-          }
+}
 
-          #serv_5{
-            top: 74vh !important;
-            left: 88vw !important;
-            }#follow_5{
-              height: 150px;
-              width: 150px;
-              img{
-                width: 100%;
-              }
-            }
-
-            #serv_6{
-              top: 9vh !important;
-              left: 97vw !important;
-              }#follow_6{
-                height: 200px;
-                width: 200px;
-              }
-
-              #serv_7{
-                top: 74vh !important;
-                left: 88vw !important;
-                }#follow_7{
-                  height: 150px;
-                  width: 150px;
-                  img{
-                    width: 100%;
-                  }
-                }
-
-
-                #scroll-down{
-                  top: 90vh !important;
-                  right: 0;
-                  text-align: center;
-                  background: none;
-                  border: none;
-                }
-
-                #mouse-wheel{
-                  animation: scroll-ball ease-in-out 1.9s infinite;
-
-                }
-
-                .logo-tuvitrina{
-                  background-image: url("../img/logo-tuvitrina.png");
-                }
-                .logo-onewing{
-                  background-image: url("../img/logo-onewing-04.png");
-
-                }
-
-                .onewing-img{
-                  height: 320px;
-                  width: 320px;
-                  background-size: contain;
-                  background-repeat: no-repeat;
-
-                  // border-radius: 100%;
-                  transition: filter 0.2s ease;
-                  // -webkit-filter: saturate(0); /* Safari 6.0 - 9.0 */
-                  // filter: saturate(0);
-                  // border: 1px solid #fff;
-
-                  &:hover{
-                    -webkit-filter: saturate(2); /* Safari 6.0 - 9.0 */
-                    filter: saturate(2);
-                    transition: filter 0.2s ease;
-                    cursor: pointer;
-                  }
-                }
-
-                .service-img{
-                  background-size: contain;
-                  background-repeat: no-repeat;
-
-                  // border-radius: 100%;
-                  transition: filter 0.2s ease;
-                  -webkit-filter: saturate(1); /* Safari 6.0 - 9.0 */
-                  filter: saturate(1);
-                  // border: 1px solid #fff;
-
-                  &:hover{
-                    //-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-                    // filter: grayscale(0%);
-                    transition: filter 0.2s ease;
-                    cursor: pointer;
-                  }
-                }
-
-
-                button{
-                  transition: background 0.5s ease;
-                  border-radius: 100%;
-                  overflow: hidden;
-                  &:hover {
-                    order-radius: 100%;
-                    overflow: hidden;
-                    background: #00FFAA;
-                    transition: background 0.5s ease;
-                  }
-                }
-              }
-
-              .fill {
-                position: absolute !important;
-                bottom: 0%;
-                right: 0%;
-                left: 0%;
-                top: 0%;
-              }
-
-              .expand-width {
-                width: 50%;
-              }
-
-              .border {
-                border: 2px dashed #00FFAA;
-              }
-
-              .wrapper {
-                position: relative;
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 5%;
-              }
-
-              //^^^^^   PARLAX WORLD   ^^^^^^//
-              //^^^^^   PARLAX WORLD   ^^^^^^//
-
-              //vvvvv   Planes   vvvvvv//
-              //vvvvv   Planes   vvvvvv//
-              #planes-section{
-                box-shadow: 0px -10px 10px $shadow;
-                z-index: 10  !important;
-
-                #planes-wrapper{
-                  z-index: 11  !important;
-                  display: flex;
-                  margin: 0 !important;
-                  padding: 0 !important;
-                  height: 100vh;
-
-                  .plan-apolo-wrapper{
-                    margin:0;
-                    background-color: #0CAACF;
-                    z-index: 12 !important;
-                    width: 100%;
-                    height: 100%;
-                    padding: 35px 15px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    @media(min-width: 991px){
-                      width: 60%;
-                    }
-                  }
-                  .otros-planes-wrapper{
-                    margin:0;
-                    background-color: #0554fa;
-                    z-index: 12 !important;
-                    width: 100%;
-                    height: 100%;
-                    @media(min-width: 991px){
-                      width: 40%;
-                    }
-
-                    .plan-ares-wrapper{
-                      margin:0;
-                      height: 50%;
-                      width: 100%;
-                      background-color: #E6535B;
-                      padding: 35px 15px;
-                      z-index: 13 !important;
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: center;
-                    }
-                    .plan-athenea-wrapper{
-                      margin:0;
-                      padding: 35px 15px;
-                      height: 50%;
-                      width: 100%;
-                      background-color: #5F4896;
-                      z-index: 13 !important;
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: center;
-                    }
-                  }
-
-                  .img-wrapper{
-                    width: 50%;
-                    margin: auto;
-                    .wordpress{
-                      max-height: 220px;
-                    }
-                    img{
-                      width: 100%;
-                    }
-
-                  }
-                  .info-wrapper{
-                    color: white;
-                    padding: 0 10%;
-                    width: 100%;
-                    .tittle{
-                      font-size:30px;
-                      font-family: 'Open Sans Condensed', sans-serif;
-                      font-weight: bold;
-                      text-transform: uppercase;
-                    }
-                    .info{
-                      font-family: 'Open Sans', sans-serif;
-                      font-size: 18px;
-                      margin-bottom: 25px;
-                    }
-                  }
-                }
-              }
-
-              #planes-extra-section{
-                box-shadow: 0px -10px 10px $shadow;
-                z-index: 20  !important;
-                #planes-extra-wrapper{
-                  display: flex;
-                  margin: 0 !important;
-                  padding: 0 !important;
-                  height: 100vh;
-                  //background-color: #125cd0;
-                  z-index: 21 !important;
-
-                  .extra-plans-img{
-                    background-color: #B1C041;
-                    height: 100%;
-                    width: 60%;
-                    margin:0;
-                    z-index: 22 !important;
-                    overflow: hidden;
-                    position: relative;
-                    img{
-                      position: absolute;
-                      left: -10px;
-                      bottom: 0;
-                      max-width: 1024px;
-                    }
-                  }
-                  .extra-plans-info{
-                    color: white;
-                    background-color: #384780;
-                    height: 100%;
-                    width: 40%;
-                    margin:0;
-                    z-index: 22 !important;
-                    padding: 30px 4%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    .tittle{
-                      color: $light-green;
-                      font-size: 25px;
-                      margin-bottom: 15px;
-                      font-family: 'Open Sans Condensed', sans-serif;
-                      font-weight: bold;
-                      text-transform: uppercase;
-                      display: flex;
-                      align-items: center;
-                      i{
-                        font-size: 15px;
-                        margin-right: 10px;
-                      }
-                    }
-                    .bigText{
-                      font-size: 35px;
-                      font-family: 'Playfair Display', serif;
-                      line-height: 45px;
-                    }
-                    .txt{
-                      font-family: 'Open Sans', sans-serif;
-                      margin-top: 25px;
-                      font-size: 20px;
-                    }
-                  }
-                }
-              }
-              //^^^^^   Planes   ^^^^^^//
-              //^^^^^   Planes   ^^^^^^//
-
-            }
-
-            .panel {
-              box-shadow: 0px -10px 10px $shadow;
-              height: 100%;
-              width: 100%;
-
-            }
-
-            //^^^^^   Wiping panels   ^^^^^^//
-            //^^^^^   Wiping panels   ^^^^^^//
+//^^^^^   Wiping panels   ^^^^^^//
+//^^^^^   Wiping panels   ^^^^^^//
 
 
 
-            //vvvvv   CONTACTO   vvvvvv//
-            //vvvvv   CONTACTO   vvvvvv//
-            #conact-section{
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
-              z-index: 30 !important;
-              background-color: #0e0e0e;
-              height: 100vh;
+//vvvvv   CONTACTO   vvvvvv//
+//vvvvv   CONTACTO   vvvvvv//
+#conact-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 30 !important;
+  background-color: #0e0e0e;
+  height: 100vh;
 
-              #contact-wrapper{
-                color: lightgray;
-                .titulo{
-                  font-family: 'Open Sans Condensed', sans-serif;
-                  font-size: 60px;
-                  font-weight: 800;
-                }
-                #contact-info{
-                  font-family: 'Open Sans Condensed', sans-serif;
-                  max-width: 800px;
-                  font-weight: 300;
-                  font-size: 20px;
-                  margin-bottom: 30px;
-                }
-                .button-wrapper{
-                  color: lightgray;
-                  width: 100%;
-                  button{
-                    background-color: transparent;
-                    border: 2px solid #00ADCF;
-                    height: 50px;
-                    width: 150px;
-                    font-family: 'Open Sans Condensed', sans-serif;
-                    font-size: 20px;
+  #contact-wrapper{
+    color: lightgray;
+    .titulo{
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 60px;
+      font-weight: 800;
+    }
+    #contact-info{
+      font-family: 'Open Sans Condensed', sans-serif;
+      max-width: 800px;
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .button-wrapper{
+      color: lightgray;
+      width: 100%;
+      button{
+        background-color: transparent;
+        border: 2px solid #00ADCF;
+        height: 50px;
+        width: 150px;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 20px;
 
-                    &:hover{
-                      background-color: #fff;
-                    }
-                  }
-                }
-              }
+        &:hover{
+          background-color: #fff;
+        }
+      }
+    }
+  }
 
-            }
-            //^^^^^   CONTACTO   ^^^^^^//
-            //^^^^^   CONTACTO   ^^^^^^//
+}
+//^^^^^   CONTACTO   ^^^^^^//
+//^^^^^   CONTACTO   ^^^^^^//
 
 
-            //vvvvv   WAVE   vvvvvv//
-            //vvvvv   WAVE   vvvvvv//
-            .rotate{
-              -ms-transform: rotate(90deg); // IE 9
-              -webkit-transform: rotate(90deg); // Safari
-              transform: rotate(90deg); // Standard syntax
-            }
+//vvvvv   WAVE   vvvvvv//
+//vvvvv   WAVE   vvvvvv//
+.rotate{
+  -ms-transform: rotate(90deg); // IE 9
+  -webkit-transform: rotate(90deg); // Safari
+  transform: rotate(90deg); // Standard syntax
+}
 
-            #wave-canvas-vertical-1{
-              position: relative;
-              top: -500px;
-            }
-            canvas{
-              width: 100%;
-              height: 100%;
-              background-color: transparent;
-            }
+#wave-canvas-vertical-1{
+  position: relative;
+  top: -500px;
+}
+canvas{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
 
-            /* Scale canvas with resize attribute to full size */
-            canvas[resize] {
-              width: 100%;
-              height: 100%;
-            }
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+  width: 100%;
+  height: 100%;
+}
 
-            //^^^^^   WAVE   ^^^^^^//
-            //^^^^^   WAVE   ^^^^^^//
+//^^^^^   WAVE   ^^^^^^//
+//^^^^^   WAVE   ^^^^^^//
 
-            ////////////////////    FOOTER    /////////////////////
-            ////////////////////    FOOTER    /////////////////////
-            ////////////////////    FOOTER    /////////////////////
-            ////////////////////    FOOTER    /////////////////////
-            ////////////////////    FOOTER    /////////////////////
+////////////////////    FOOTER    /////////////////////
+////////////////////    FOOTER    /////////////////////
+////////////////////    FOOTER    /////////////////////
+////////////////////    FOOTER    /////////////////////
+////////////////////    FOOTER    /////////////////////
 
-            //vvvvv   FOOTER   vvvvvv//
-            //vvvvv   FOOTER   vvvvvv//
+//vvvvv   FOOTER   vvvvvv//
+//vvvvv   FOOTER   vvvvvv//
 
-            footer{
-              width: 100%;
-              bottom: 0;
-              height: 200px;
-              background-color: black;
-            }
+footer{
+  width: 100%;
+  bottom: 0;
+  height: 200px;
+  background-color: black;
+}
 
-            //^^^^^   FOOTER   ^^^^^^//
-            //^^^^^   FOOTER   ^^^^^^//
+//^^^^^   FOOTER   ^^^^^^//
+//^^^^^   FOOTER   ^^^^^^//

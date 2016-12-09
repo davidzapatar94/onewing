@@ -39,8 +39,26 @@
 				text-decoration: none !important;
 }
 
-.hover-background-purple:hover {
-				background-color: rebeccapurple;
+.hover-background-purple:before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 47px;
+				height: 47px;
+				border-radius: 100%;
+				background: rebeccapurple;
+				-webkit-transform: scale(0);
+				transform: scale(0);
+				-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+				transition: opacity 0.3s, -webkit-transform 0.3s;
+				transition: transform 0.3s, opacity 0.3s;
+				transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+				transition: transform 0.3s cubic-bezier(0.54, 1.54, 0.43, 0.94), -webkit-transform 0.3s cubic-bezier(0.54, 1.54, 0.43, 0.94);
+}
+
+.hover-background-purple:hover:before {
+				-webkit-transform: scale(1);
+				transform: scale(1);
 }
 
 html,
